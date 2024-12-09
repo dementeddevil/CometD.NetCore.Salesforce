@@ -2,12 +2,16 @@
 
   <PropertyGroup>
     <RunCodeAnalysis>true</RunCodeAnalysis>
-    <NetCoreCommonVersion>[3.*, )</NetCoreCommonVersion>
+    <NetCoreCommonVersion>[7.*, )</NetCoreCommonVersion>
     <BetCommonVersion>[4.*, )</BetCommonVersion>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(TargetFramework)' == 'net6.0' Or '$(TargetFramework)' == 'netstandard2.1'">
-    <NetCoreCommonVersion>[6.*, )</NetCoreCommonVersion>
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net8.0'">
+    <NetCoreCommonVersion>[8.*, )</NetCoreCommonVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net9.0' Or '$(TargetFramework)' == 'netstandard2.1'">
+    <NetCoreCommonVersion>[9.*, )</NetCoreCommonVersion>
   </PropertyGroup>
 
   <ItemGroup Label="NetCore">
@@ -33,11 +37,11 @@
 
   <ItemGroup Label="Shared Libraries">
     <PackageReference Update="CometD.NetCore2" Version="[2.*, )" />
-    <PackageReference Update="McMaster.Extensions.CommandLineUtils" Version="3.1.0" />
-    <PackageReference Update="NetCoreForce.Client" Version="3.0.0" />
-    <PackageReference Update="Polly" Version="7.2.1" />
+    <PackageReference Update="McMaster.Extensions.CommandLineUtils" Version="4.1.1" />
+    <PackageReference Update="NetCoreForce.Client" Version="4.1.0" />
+    <PackageReference Update="Polly" Version="8.5.0" />
     <PackageReference Update="Colorful.Console" Version="1.2.15" />
-    <PackageReference Update="TextCopy" Version="4.3.0" />
+    <PackageReference Update="TextCopy" Version="6.2.1" />
   </ItemGroup>
 
   <ItemGroup Label="Testing">
@@ -52,7 +56,7 @@
   </ItemGroup>
 
   <ItemGroup Label="SourceLink">
-    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="[1.*, )" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="[8.*, )" PrivateAssets="All" />
   </ItemGroup>
 
   <ItemGroup>
